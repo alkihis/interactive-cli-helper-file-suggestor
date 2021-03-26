@@ -12,6 +12,8 @@ npm i @interactive-cli-helper/file-suggestor
 
 Give the default export of package as `onSuggest` value in command options.
 
+### With functional API
+
 ```ts
 import CliHelper from 'interactive-cli-helper';
 import cliFileSuggestor from '@interactive-cli-helper/file-suggestor';
@@ -26,5 +28,32 @@ cli.command('read', filename => {
   onSuggest: cliFileSuggestor,
 });
 
+cli.listen();
+```
+
+### With decorators API
+
+```ts
+import { CliMain, CliBase, Command, CliCommand, CliCommandInstance, CliExecutor } from 'interactive-cli-helper';
+  
+@CliCommand()
+class ReadCommand {
+  onSuggest = cliFileSuggestor;
+  
+  executor: CliExecutor = filename => {
+    console.log(fs.readFileSync(filename, 'utf-8'));
+  };
+}
+ 
+@CliMain({ suggestions: true })
+class Main extends CliBase {
+  onNoMatch: CliExecutor = 'No command matched your search.';
+ 
+  // Assign ReadCommand for 'read' command
+  @Command('read', ReadCommand)
+  read_command!: CliCommandInstance<ReadCommand>;
+}
+ 
+const cli = new Main();
 cli.listen();
 ```
