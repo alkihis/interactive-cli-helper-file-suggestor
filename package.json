@@ -1,12 +1,14 @@
 {
   "name": "@interactive-cli-helper/file-suggestor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Allow to auto-suggest one file name as a command suggestion for [interactive-cli-helper package](https://www.npmjs.com/package/interactive-cli-helper).",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["interactive-cli-helper"],
+  "keywords": [
+    "interactive-cli-helper"
+  ],
   "author": "Alkihis",
   "license": "ISC",
   "dependencies": {
