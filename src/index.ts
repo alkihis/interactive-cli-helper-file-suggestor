@@ -1,5 +1,5 @@
 import glob from 'glob';
-import { CliSuggestor } from 'interactive-cli-helper';
+import type { CliSuggestor } from 'interactive-cli-helper';
 
 export const cliFileSuggestor: CliSuggestor = (rest: string) => {
   // If path is relative, add ./ to help glob
