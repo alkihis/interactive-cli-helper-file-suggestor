@@ -1,6 +1,6 @@
 {
   "name": "@interactive-cli-helper/file-suggestor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Allow to auto-suggest one file name as a command suggestion for [interactive-cli-helper package](https://www.npmjs.com/package/interactive-cli-helper).",
   "main": "dist/index.js",
   "scripts": {
